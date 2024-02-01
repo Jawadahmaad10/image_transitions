@@ -43,7 +43,7 @@ The cursor property in CSS is used to define the type of cursor that should be d
  flex: 0.5;
  margin: 10px;
  position: relative;
- transition: flex 0.7s ease-in;
+ transition: flex 5s ease-in;
 }
 
 
