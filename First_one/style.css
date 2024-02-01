@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Muli&display=swap');
+
+/* This * asterik  represents a  universal selector applied on all */
+*{
+  box-sizing: border-box;  
+}
+
+body{
+font-family: 'Muli', sans-serif;
+display: flex;
+/*flex-direction: row;*/
+
+align-items: center;
+justify-content: center;
+height: 100vh;
+overflow: hidden;
+margin: 0;
+}
+
+
+.container{
+  display: flex;
+  width: 90vw;
+}
+ 
+.panel{
+ /*it sets background image to show full 100 percent
+ 1. auto: This specifies that the width of the background image should be automatically determined by the browser, maintaining the image's aspect ratio.
+
+ 2.100%: This specifies that the height of the background image should be 100% of the element's height, stretching to cover the entire vertical space.
+ */ 
+ background-size: auto 100%;
+ background-position: center; 
+ background-repeat: no-repeat;
+ height: 80vh;
+ border-radius: 50px;
+ /* color of text */
+ color: #fff;
+ /*
+The cursor property in CSS is used to define the type of cursor that should be displayed when the mouse pointer is over an element. When you set cursor: pointer;, it means that the cursor will change to a pointing hand, indicating to the user that the element is interactive and can be clicked. 
+ */
+ cursor: pointer;
+ flex: 0.5;
+ margin: 10px;
+ position: relative;
+ transition: flex 0.7s ease-in;
+}
+
+
+.panel h3{
+ font-size: 24px; 
+ position: absolute;
+ bottom: 20px;
+ left: 20px;
+ margin: 0;
+ opacity: 0;
+}
+
+
+/*  When the panel is active
+    1. flex size will be set to 5 others 0.5 above
+*/
+
+.panel.active{
+  flex: 5;
+}
+/*  making the text visible by mentionioning the opacity as 1 */
+.panel.active h3{
+  opacity: 1;
+  transition: opacity 0.3s ease-in 0.4s;
+} 
+
+@media (max-width: 480px) {
+  .container{
+    width: 100vw;
+  }
+
+  .panel:nth-of-type(4),
+  .panel:nth-of-type(5){
+    display: none;
+  }
+}
+/*  
+.container Styles: When the viewport width is at most 400 pixels, the .container element will have a width of 100vw. This sets the width to be 100% of the viewport width.
+
+.panel:nth-of-type(4), .panel:nth-of-type(5) Styles: The :nth-of-type(4) and :nth-of-type(5) selectors are used to target the 4th and 5th elements with the class .panel. When the viewport width is at most 400 pixels, the display: none; property is applied to these elements, making them invisible (not displayed) on the page.
+
+So, when the screen width is 400 pixels or less, the container becomes full width, and the 4th and 5th panels are hidden. These kinds of media queries are commonly used in responsive web design to adjust the layout or appearance of a webpage based on different screen sizes.
+*/
+
+/*
+
+
+
+Certainly! The CSS code you provided is styling the body element in your project. Here's a brief explanation of each property:
+
+font-family: 'Roboto', sans-serif;:
+
+Sets the font family for the text content within the body element. It uses 'Roboto' as the preferred font and falls back to a generic sans-serif font if 'Roboto' is unavailable.
+display: flex;:
+Turns the body element into a flex container, enabling you to use flex properties for its direct children.
+flex-direction: column;:
+
+Sets the main axis of the flex container to be vertical, arranging its children in a column layout. This means child elements will stack on top of each other.
+align-items: center;:
+
+Aligns the children of the flex container along the cross-axis (vertically in a column layout) to the center. This centers the content horizontally.
+justify-content: center;:
+
+Aligns the children of the flex container along the main axis (vertically in a column layout) to the center. This centers the content vertically.
+height: 100vh;:
+
+Sets the height of the body element to 100% of the viewport height (vh). This ensures that the entire viewport height is covered by the body.
+overflow: hidden;:
+
+Hides any content that overflows the body element. This property is commonly used to prevent scrollbars from appearing on the body.
+margin: 0;:
+
+Sets the margin of the body element to 0, removing any default margin that browsers may apply. This ensures a consistent starting point for the layout.
+In summary, the provided CSS is configuring the body element to have a specific font, be a flex container with a column layout, center its content both horizontally and vertically, cover the entire viewport height, hide any overflowing content, and eliminate any default margin.
+
+*/
+
+
+
+
